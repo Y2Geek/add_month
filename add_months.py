@@ -21,26 +21,26 @@ def days_in_month(month, year):
     else:
         return 30
 
-def get_new_month(date):
+def get_new_month(date, num_of_months):
     """
     Adds month to date, if current is December
     returns a tuple with new month and new year
     otherwise returns tuple with new_month and None
     """
-    new_month = date.month + 1
+    if num_of_months <= 12:
+        new_month = date.month + num_of_months
 
-    if new_month > 12:
-        new_month -= 12
-        new_year = date.year +1
-        return (new_month, new_year)
-    else:
-        new_month = date.month + 1
-        return (new_month, None)
+        if new_month > 12 and new_month > 24:
+            new_month -= 12
+            new_year = date.year +1
+            return (new_month, new_year)
+        elif new_month < 12:
+            return (new_month, None)
 
 
-def add_month(date):
-    """Moves date forward by given amount of months"""
-    new_details = get_new_month(date)
+def add_months(date, num_of_months):
+    """Moves date forward by given number of months"""
+    new_details = get_new_month(date, num_of_months)
     print(new_details)
 
     if new_details[1] != None:
