@@ -1,2 +1,2 @@
 # add_month
-Python - Add a month to datetime object
+Python - Add month(s) to datetime object

@@ -1,4 +1,4 @@
-"""A function to add a month to a datetime object"""
+"""A function to add months to a datetime object"""
 
 from datetime import datetime
 
