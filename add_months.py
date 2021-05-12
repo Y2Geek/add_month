@@ -21,6 +21,7 @@ def days_in_month(month, year):
     else:
         return 30
 
+
 def get_new_month(date, num_of_months):
     """
     Adds month to date, if current is December
@@ -30,7 +31,7 @@ def get_new_month(date, num_of_months):
     if num_of_months <= 12:
         new_month = date.month + num_of_months
 
-        if new_month > 12 and new_month < 24:
+        if new_month > 12 and new_month <= 24:
             new_month -= 12
             new_year = date.year +1
             return (new_month, new_year)
